@@ -18,6 +18,7 @@ func DBSet() *mongo.Client {
 	}
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
+	fmt.Println("connected to database successfully")
 	err = client.Connect(ctx)
 	if err != nil {
 		log.Fatal(err)
