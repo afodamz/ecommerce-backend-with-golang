@@ -125,15 +125,7 @@ func Login() gin.HandlerFunc {
 			fmt.Println(msg)
 			return
 		}
-		ouputUser := dto.User{
-			ID: founduser.User_ID,
-			First_Name: *founduser.First_Name,
-			Last_Name: *founduser.Last_Name,
-			Email: *founduser.Email,
-			Phone: *founduser.Phone,
-			Token: *founduser.Token,
-			Refresh_Token: *founduser.Refresh_Token,
-		}
+		ouputUser := dto.GetUserDetails(founduser);
 		token, refreshToken, _ := generate.TokenGenerator(ouputUser.Email, ouputUser.First_Name, ouputUser.Last_Name, ouputUser.ID)
 		defer cancel()
 		generate.UpdateAllTokens(token, refreshToken, ouputUser.ID)
