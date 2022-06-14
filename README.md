@@ -25,3 +25,12 @@ go run main.go
 - Deleting the Adress 🗑️
 - Checkout the Items from Cart
 - Buy Now products💰
+
+## Running Locally
+
+Make sure you have [Go](http://golang.org/doc/install) version 1.17 or newer and the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) installed.
+
+```sh
+$ git clone https://github.com/heroku/go-getting-started.git
+$ cd go-getting-started
+$ go build -o bin/golang-gin-poc -v . # or `go build -o bin/go-getting-started.exe -v .` 
